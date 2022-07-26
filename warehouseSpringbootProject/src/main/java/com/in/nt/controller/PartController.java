@@ -15,7 +15,7 @@ import com.in.nt.services.IPartService;
 
 @Controller
 public class PartController {
-
+int a;
 	@Autowired
 	private IPartService partService;
 
