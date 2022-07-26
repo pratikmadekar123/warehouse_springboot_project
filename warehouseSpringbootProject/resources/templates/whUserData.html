@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="javascript:void(0)">Warehouse</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#mynavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mynavbar">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/data}">Uom</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/part/data}">Part</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/shipment/data}">ShipmentType</a></li>
+				</ul>
+				<form class="d-flex">
+					<input class="form-control me-2" type="text" placeholder="Search">
+					<button class="btn btn-primary" type="button">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>  
+	
+	<!-- Container -->
+	<div class="container">
+	<div class="heading">
+	<h2>WhUser Data</h2>
+	</div>
+	<div class="row">
+	<div class="col-3">
+	<!-- <a th:href="@{/part/register}" class="btn btn-success" >Create Part</a> -->
+	</div>
+	</div>
+	<table class="table table-striped table-bordered">
+	<thead class="table-dark">
+	  <tr>
+	  <th>WhUser ID</th>
+	  <th>User Type</th>
+	  <th>User Code</th>
+	  <th>User For</th>
+	  <th>User Email</th>
+	  <th>User Contact</th>
+	  <th>User Id Type</th>
+	  <th>Id Number</th>
+	  
+	  </tr>
+	</thead>
+	<tbody>
+	<tr th:each="list: ${lists}">
+	<td th:text="${list.whUserId}"></td>
+	<td th:text="${list.userType}"></td>
+	<td th:text="${list.userCode}"></td>
+	<td th:text="${list.userFor}"></td>
+	<td th:text="${list.userEmail}"></td>
+	<td th:text="${list.userContact}"></td>
+	<td th:text="${list.userIdType}"></td>
+	<td th:text="${list.idnumber}"></td>
+	<td>
+	<!-- <a th:href="@{/part/edit/{id}(id=${lists.partId})}" class="btn btn-primary">Edit</a>
+	<a th:href="@{/part/delete/{id} (id=${lists.partId})}" class="btn btn-danger">Delete</a>  -->
+	</td>
+	
+	</tr>
+	</tbody>
+	</table>
+	</div>
+</body>
+</html>
